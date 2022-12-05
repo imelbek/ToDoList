@@ -27,8 +27,8 @@ namespace ToDoList.Models
         }
 
 
-        // to add a table for toDos
-        // this class dbset is part of this data access layer to be a collection of todos
+        // To add a table for toDos
+        // This class (dbset) is part of this data access layer to be a collection of todos
         // that are in the table in this database that is defined by app dbcontext
         public DbSet<ToDo> ToDos { get; set; }
 

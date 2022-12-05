@@ -15,6 +15,9 @@ namespace ToDoList.Controllers
 {
     public class ToDoesController : Controller
     {
+        // This is data context, data access layer which is defined and then is going to be used
+        // in the various methods to view things in the database, to add things into the database
+        // and to get things out and to do queries
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: ToDoes
@@ -77,9 +80,10 @@ namespace ToDoList.Controllers
         {
             if (ModelState.IsValid)
             {
+                // to make a link between "this" toDo and the user
                 string currentUserId = User.Identity.GetUserId();
-                ApplicationUser currentUser = db.Users.FirstOrDefault
-                    (x => x.Id == currentUserId);
+                // we will look for an object, where an id of object is equal to currentUserId
+                ApplicationUser currentUser = db.Users.FirstOrDefault(x => x.Id == currentUserId);
                 toDo.User= currentUser;
                 toDo.IsDone = false;
                 db.ToDos.Add(toDo);
