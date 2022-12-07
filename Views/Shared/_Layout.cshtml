@@ -21,6 +21,8 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
+                    @* linkText and controllerName are changed *@
+                    @* 2 other items are removed as they are not necessary *@
                     <li>@Html.ActionLink("My ToDo List", "Index", "ToDoes")</li>
                 </ul>
                 @Html.Partial("_LoginPartial")
@@ -31,7 +33,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            <p>&copy; @DateTime.Now.Year - My ToDo List Application</p>
         </footer>
     </div>
 

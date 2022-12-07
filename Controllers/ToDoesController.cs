@@ -28,10 +28,12 @@ namespace ToDoList.Controllers
 
         private IEnumerable<ToDo> GetMyToDoes()
         {
+            // to look only at the list of toDos of specific user, not the whole toDo list
             string currentUserId = User.Identity.GetUserId();
             ApplicationUser currentUser = db.Users.FirstOrDefault
                 (x => x.Id == currentUserId);
 
+            // adding query here
             IEnumerable<ToDo> myToDoes = db.ToDos.ToList().Where(x => x.User == currentUser);
 
             int completeCount = 0;

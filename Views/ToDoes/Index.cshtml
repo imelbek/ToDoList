@@ -7,6 +7,7 @@
 <h2>My ToDo List</h2>
 
 <div id="tableDiv"></div>
+@* table class that was here transformed to _ToDoTable.cshtml (partial view) *@
 <div id="todoCreateFrom">
     @using (Ajax.BeginForm("AjaxCreate", "ToDoes",
         new AjaxOptions
@@ -15,7 +16,7 @@
             HttpMethod = "POST",
             UpdateTargetId = "tableDiv"
         }))
-        {
+    {
         <div class="form-group">
             @Html.AntiForgeryToken()
             <div>
@@ -23,11 +24,11 @@
                 @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
             </div>
         </div>
-        }
+    }
 </div>
 
 @section Scripts {
-    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script> @* to query ajax itself *@
     <script src="~/Custom_Scripts/BuildTable.js"></script>
     @Scripts.Render("~/bundles/jqueryval");
 }
