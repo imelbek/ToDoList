@@ -1,18 +1,18 @@
 ﻿namespace ToDoList.Migrations
 {
+    using Microsoft.AspNet.Identity.EntityFramework;
+    using Microsoft.AspNet.Identity;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
-    using Microsoft.AspNet.Identity;
-    using Microsoft.AspNet.Identity.EntityFramework;
     using ToDoList.Models;
 
     internal sealed class Configuration : DbMigrationsConfiguration<ToDoList.Models.ApplicationDbContext>
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;
         }
 
         protected override void Seed(ToDoList.Models.ApplicationDbContext context)
